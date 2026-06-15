@@ -5,8 +5,12 @@ import { Spinner } from "@/components/ui/shadcn-io/spinner";
 
 interface CoinData {
   [key: string]: {
-    price_usd: string;
-    percent_change_24h: string;
+    quotes: {
+      USD: {
+        price: number;
+        percent_change_24h: number;
+      };
+    };
   };
 }
 
@@ -51,10 +55,11 @@ export default function CryptoPriceTicker() {
             <div className="ticker-inner">
               {[...assets, ...assets].map((asset, index) => {
                 const coin = data?.[asset.key];
-                if (!coin || !coin.price_usd) return null;
+                if (!coin || !coin.quotes || !coin.quotes.USD) return null;
 
-                const price = parseFloat(coin.price_usd).toLocaleString();
-                const percentChange = parseFloat(coin.percent_change_24h);
+                const priceData = coin.quotes.USD;
+                const price = priceData.price.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+                const percentChange = priceData.percent_change_24h;
                 const formattedChange = percentChange.toFixed(2);
                 const percentClass = percentChange >= 0 ? "text-green-500" : "text-red-500";
                 const symbol = percentChange >= 0 ? "+" : "";
