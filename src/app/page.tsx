@@ -90,11 +90,27 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="card-color border border-color rounded-md p-3 sm:p-4 text-fill-color relative overflow-hidden flex items-center justify-center min-h-48">
-              <div className="flex flex-col items-center justify-center text-center">
-                <p className="text-sm sm:text-base font-medium mb-1">COMING SOON</p>
-                <p className="text-xs text-fill-color/60">Feature in development</p>
-              </div>
+            <div className="card-color border border-color rounded-md text-fill-color relative overflow-hidden flex items-center justify-center min-h-48 group">
+              <img
+                src="https://nekowawolf.github.io/cdn-images/images/2026/1781829282_godhand.png"
+                alt="Background Dark"
+                className="theme-icon-sun absolute inset-0 w-full h-full object-cover"
+              />
+              <img
+                src="https://nekowawolf.github.io/cdn-images/images/2026/1781831285_godhand_white.png"
+                alt="Background Light"
+                className="theme-icon-moon absolute inset-0 w-full h-full object-cover"
+              />
+              <a href="#" className="absolute flex flex-col items-center mr-6 sm:mr-7 z-10 transition-transform hover:scale-105">
+                <img
+                  src="https://nekowawolf.github.io/cdn-images/images/2026/1781829491_folder.png"
+                  alt="Folder"
+                  className="w-14 sm:w-18 h-14 sm:h-18 cursor-pointer drop-shadow-lg"
+                />
+                <p className="-mt-2 text-fill-color text-[10px] sm:text-sm font-semibold drop-shadow-md whitespace-nowrap">
+                  Nww Ecosystem
+                </p>
+              </a>
             </div>
 
             <StatsCard 
