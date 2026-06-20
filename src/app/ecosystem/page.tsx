@@ -43,6 +43,7 @@ export const ecosystemsData = [
 export default function EcosystemPage() {
 
   const [badgeText, setBadgeText] = useState(LANGUAGES[0]);
+  const [scrambledFolder, setScrambledFolder] = useState('');
 
   useEffect(() => {
     let interval: NodeJS.Timeout;
@@ -88,6 +89,21 @@ export default function EcosystemPage() {
 
     interval = setInterval(cycleLanguage, 3000);
     return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    const chars = '!@#$%^&*()_+-=[]{}|;:,.<>?';
+    const folderLength = 12;
+    
+    const scrambleInterval = setInterval(() => {
+      let scrambled = '';
+      for (let i = 0; i < folderLength; i++) {
+        scrambled += chars[Math.floor(Math.random() * chars.length)];
+      }
+      setScrambledFolder(scrambled);
+    }, 50);
+
+    return () => clearInterval(scrambleInterval);
   }, []);
 
   return (
@@ -151,6 +167,43 @@ export default function EcosystemPage() {
               </a>
             );
           })}
+        </div>
+
+        {/* Terminal Section */}
+        <div className="w-full max-w-4xl mt-16 sm:mt-24 text-fill-color border border-divider rounded-xl p-5 sm:p-6 font-mono text-sm sm:text-base shadow-2xl relative overflow-hidden group">
+          {/* Terminal Window Controls */}
+          <div className="flex gap-2 mb-6">
+            <div className="w-3 h-3 rounded-full bg-red-500"></div>
+            <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+            <div className="w-3 h-3 rounded-full bg-green-500"></div>
+          </div>
+          
+          {/* Terminal Output */}
+          <div className="flex flex-col gap-2">
+            <div className="flex flex-wrap items-center text-sm sm:text-base">
+              <span className="text-green-600 font-bold">nekowawolf@ubuntu</span>
+              <span className="text-fill-color">:</span>
+              <span className="text-blue-600 font-bold">~/nww-ecosystem</span>
+              <span className="text-fill-color mr-2">$</span>
+              <span className="text-fill-color mr-2">mkdir</span>
+              <span className="text-fill-color tracking-wider">{scrambledFolder}</span>
+            </div>
+            
+            <div className="mt-2 text-fill-color opacity-80 text-sm sm:text-base leading-relaxed flex flex-col gap-1">
+              <span>Upcoming project for the Nww Ecosystem ...</span>
+              <span className="mt-4">
+                Explore my other works{' '}
+                <a 
+                  href="https://portfolio.nekowawolf.xyz/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-blue-600 hover:text-blue-500 transition-colors hover:underline underline-offset-4"
+                >
+                  here
+                </a>
+              </span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
