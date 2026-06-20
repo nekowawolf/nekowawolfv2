@@ -24,7 +24,7 @@ export default function StatsCard({ title, link, description, count }: StatsCard
             <FaExternalLinkAlt className="text-xs" />
           </Link>
         </h3>
-        <span className="text-[10px] bg-blue-300 text-blue-700 px-2 py-0.5 rounded-full">
+        <span className="text-[10px] bg-blue-500/10 text-blue-400 border border-blue-500/20 px-2 py-0.5 rounded-full">
           Active
         </span>
       </div>

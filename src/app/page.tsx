@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import Link from 'next/link';
 import SocialLinks from '@/components/SocialLinks';
 import GasTracker from '@/components/GasTracker';
 import FearAndGreed from '@/components/FearAndGreed';
@@ -8,6 +9,7 @@ import CryptoPriceTicker from '@/components/CryptoPriceTicker';
 import GithubStats from '@/components/GithubStats';
 import StatsCard from '@/components/StatsCard';
 import { fetchStats } from '@/utils/fetchStats';
+import { ecosystemsData } from '@/app/ecosystem/page';
 
 export default function Home() {
   const [stats, setStats] = useState({ communityCount: '--', airdropCount: '--' });
@@ -101,7 +103,21 @@ export default function Home() {
                 alt="Background Light"
                 className="theme-icon-moon absolute inset-0 w-full h-full object-cover"
               />
-              <a href="#" className="absolute flex flex-col items-center mr-6 sm:mr-7 z-10 transition-transform hover:scale-105">
+              
+              {/* Active Badge */}
+              <div className="absolute top-3 sm:top-4 right-3 sm:right-4 z-20">
+                <span className="inline-block text-[10px] bg-blue-500/10 text-blue-400 border border-blue-500/20 px-2 py-0.5 rounded-full backdrop-blur-md">
+                  Active
+                </span>
+              </div>
+
+              <div className="absolute bottom-2.5 sm:bottom-3 left-3 sm:left-4 z-20">
+                <span className="text-[11px] text-fill-color/60 font-medium">
+                  {ecosystemsData.length} ecosystems
+                </span>
+              </div>
+
+              <Link href="/ecosystem" className="absolute flex flex-col items-center mr-6 sm:mr-7 z-10 transition-transform hover:scale-105">
                 <img
                   src="https://nekowawolf.github.io/cdn-images/images/2026/1781829491_folder.png"
                   alt="Folder"
@@ -110,7 +126,7 @@ export default function Home() {
                 <p className="-mt-2 text-fill-color text-[10px] sm:text-sm font-semibold drop-shadow-md whitespace-nowrap">
                   Nww Ecosystem
                 </p>
-              </a>
+              </Link>
             </div>
 
             <StatsCard 
