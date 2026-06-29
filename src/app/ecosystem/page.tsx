@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import { FaXTwitter, FaInstagram, FaThreads } from 'react-icons/fa6';
 
 const LANGUAGES = [
   "Ecosystem",
@@ -203,6 +204,23 @@ export default function EcosystemPage() {
                 </a>
               </span>
             </div>
+          </div>
+        </div>
+
+        {/* Social Section */}
+        <div className="flex flex-col items-center mt-10 space-y-4">
+          <p className="text-fill-color opacity-80 font-medium text-sm sm:text-base">follow us</p>
+          <div className="flex items-center gap-4 px-6 py-3 rounded-full bg-white/5 border border-divider shadow-sm w-max">
+            <a href="https://x.com/nwwonee" target="_blank" rel="noopener noreferrer" className="opacity-70 hover:opacity-100 transition-opacity text-fill-color">
+              <FaXTwitter className="text-lg" />
+            </a>
+            <a href="https://instagram.com/nwwonee" target="_blank" rel="noopener noreferrer" className="opacity-70 hover:opacity-100 transition-opacity text-fill-color">
+              <FaInstagram className="text-lg" />
+            </a>
+            <a href="https://threads.net/@nwwonee" target="_blank" rel="noopener noreferrer" className="opacity-70 hover:opacity-100 transition-opacity text-fill-color">
+              <FaThreads className="text-lg" />
+            </a>
+            <span className="text-fill-color font-semibold text-sm">@nwwonee</span>
           </div>
         </div>
       </div>
