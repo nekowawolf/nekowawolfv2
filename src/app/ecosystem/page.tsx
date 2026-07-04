@@ -198,7 +198,7 @@ export default function EcosystemPage() {
                   href="https://portfolio.nekowawolf.xyz/" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="text-blue-600 hover:text-blue-500 transition-colors hover:underline underline-offset-4"
+                  className="cursor-pointer text-blue-600 hover:text-blue-500 transition-colors hover:underline underline-offset-4"
                 >
                   here
                 </a>
@@ -211,13 +211,13 @@ export default function EcosystemPage() {
         <div className="flex flex-col items-center mt-10 space-y-4">
           <p className="text-fill-color opacity-80 font-medium text-sm sm:text-base">follow us</p>
           <div className="flex items-center gap-4 px-6 py-3 rounded-full bg-white/5 border border-divider shadow-sm w-max">
-            <a href="https://x.com/nwwonee" target="_blank" rel="noopener noreferrer" className="opacity-70 hover:opacity-100 transition-opacity text-fill-color">
+            <a href="https://x.com/nwwonee" target="_blank" rel="noopener noreferrer" className="cursor-pointer opacity-70 hover:opacity-100 transition-opacity text-fill-color">
               <FaXTwitter className="text-lg" />
             </a>
-            <a href="https://instagram.com/nwwonee" target="_blank" rel="noopener noreferrer" className="opacity-70 hover:opacity-100 transition-opacity text-fill-color">
+            <a href="https://instagram.com/nwwonee" target="_blank" rel="noopener noreferrer" className="cursor-pointer opacity-70 hover:opacity-100 transition-opacity text-fill-color">
               <FaInstagram className="text-lg" />
             </a>
-            <a href="https://threads.net/@nwwonee" target="_blank" rel="noopener noreferrer" className="opacity-70 hover:opacity-100 transition-opacity text-fill-color">
+            <a href="https://threads.net/@nwwonee" target="_blank" rel="noopener noreferrer" className="cursor-pointer opacity-70 hover:opacity-100 transition-opacity text-fill-color">
               <FaThreads className="text-lg" />
             </a>
             <span className="text-fill-color font-semibold text-sm">@nwwonee</span>

@@ -117,7 +117,7 @@ export default function Home() {
                 </span>
               </div>
 
-              <Link href="/ecosystem" className="absolute flex flex-col items-center mr-6 sm:mr-7 z-10 transition-transform hover:scale-105">
+              <Link href="/ecosystem" className="cursor-pointer absolute flex flex-col items-center mr-6 sm:mr-7 z-10 transition-transform hover:scale-105">
                 <img
                   src="https://nekowawolf.github.io/cdn-images/images/2026/1781829491_folder.png"
                   alt="Folder"
