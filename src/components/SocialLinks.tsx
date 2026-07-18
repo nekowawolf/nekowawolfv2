@@ -2,7 +2,8 @@
 
 import { useEffect, useState } from 'react';
 import { toggleDarkMode } from '@/utils/darkmode';
-import { FaMoon, FaSun, FaLink, FaLinkedin, FaGithub } from 'react-icons/fa';
+import { FaMoon, FaSun, FaLinkedin, FaGithub } from 'react-icons/fa';
+import { AiOutlineLink } from 'react-icons/ai';
 
 export default function SocialLinks() {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -38,7 +39,7 @@ export default function SocialLinks() {
         rel="noopener noreferrer"
         className="card-color w-full h-12 sm:w-12 sm:h-12 rounded-md border border-color flex justify-center items-center text-fill-color text-xl"
       >
-        <FaLink className="text-fill-color" size={21} />
+        <AiOutlineLink className="text-fill-color" size={21} />
       </a>
 
       <a
