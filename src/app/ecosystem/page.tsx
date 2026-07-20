@@ -122,7 +122,7 @@ export default function EcosystemPage() {
 
           {/* Title */}
           <h1 className="text-4xl sm:text-6xl font-extrabold text-fill-color tracking-tighter drop-shadow-sm">
-            /nww ecosystem
+            /nww-ecosystem
           </h1>
 
           {/* Description */}
