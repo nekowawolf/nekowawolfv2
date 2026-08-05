@@ -2,12 +2,13 @@ import '@/styles/globals.css';
 import { Inter } from 'next/font/google';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Metadata } from 'next'; 
+import { nekowawolfMetadata } from '@/constants/metadataTemplates';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'nekowawolf',
-  description: 'Fullstack Developer',
+  ...nekowawolfMetadata('Home', 'Fullstack Developer'),
+  metadataBase: new URL('https://nekowawolf.xyz/'),
   icons: {
     icon: [
       { url: '/favicon-96x96.png', sizes: '96x96', type: 'image/png' },
