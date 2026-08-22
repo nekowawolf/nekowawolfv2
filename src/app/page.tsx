@@ -12,13 +12,13 @@ import { fetchStats } from '@/utils/fetchStats';
 import { ecosystemsData } from '@/app/ecosystem/page';
 
 export default function Home() {
-  const [stats, setStats] = useState({ communityCount: '--', airdropCount: '--' });
+  const [stats, setStats] = useState({ githubRepoCount: '--', aiToolsCount: '--' });
   const [gasTimer, setGasTimer] = useState('Gwei updates in: --');
 
   useEffect(() => {
     const loadStats = async () => {
-      const { communityCount, airdropCount } = await fetchStats();
-      setStats({ communityCount, airdropCount });
+      const { githubRepoCount, aiToolsCount } = await fetchStats();
+      setStats({ githubRepoCount, aiToolsCount });
     };
     loadStats();
   }, []);
@@ -94,12 +94,12 @@ export default function Home() {
 
             <div className="card-color border border-color rounded-md text-fill-color relative overflow-hidden flex items-center justify-center min-h-48 group">
               <img
-                src="https://nekowawolf.github.io/cdn-images/images/2026/1781829282_godhand.png"
+                src="https://cdn.nekowawolf.xyz/image/2026/1787424827_1781829282_godhand.webp"
                 alt="Background Dark"
                 className="theme-icon-sun absolute inset-0 w-full h-full object-cover"
               />
               <img
-                src="https://nekowawolf.github.io/cdn-images/images/2026/1781831285_godhand_white.png"
+                src="https://cdn.nekowawolf.xyz/image/2026/1787424839_1781831285_godhand_white.webp"
                 alt="Background Light"
                 className="theme-icon-moon absolute inset-0 w-full h-full object-cover"
               />
@@ -119,7 +119,7 @@ export default function Home() {
 
               <Link href="/ecosystem" className="cursor-pointer absolute flex flex-col items-center mr-6 sm:mr-7 z-10 transition-transform hover:scale-105">
                 <img
-                  src="https://nekowawolf.github.io/cdn-images/images/2026/1781829491_folder.png"
+                  src="https://cdn.nekowawolf.xyz/image/2026/1787424833_1781829491_folder.webp"
                   alt="Folder"
                   className="w-14 sm:w-18 h-14 sm:h-18 cursor-pointer drop-shadow-lg"
                 />
@@ -130,17 +130,17 @@ export default function Home() {
             </div>
 
             <StatsCard 
-              title="Airdrop" 
-              link="https://airdrop.nekowawolf.xyz/" 
-              description="Curated list of ongoing airdrops sourced from verified channels, X (Twitter), Medium, and official announcements."
-              count={stats.airdropCount}
+              title="AI Tools" 
+              link="https://ai.nekowawolf.xyz/" 
+              description="Curated list of powerful Artificial Intelligence tools and resources, sourced from verified channels and sources."
+              count={stats.aiToolsCount}
             />
 
             <StatsCard 
-              title="Community" 
-              link="https://cc.nekowawolf.xyz/" 
-              description="Curated list of crypto communities you can join, sourced from trusted platforms, forums, and official groups."
-              count={stats.communityCount}
+              title="GitHub Repos" 
+              link="https://github.nekowawolf.xyz/" 
+              description="Curated list of top open-source repositories and developer projects, sourced from trusted platforms and creators."
+              count={stats.githubRepoCount}
             />
           </div>
         </div>
