@@ -38,6 +38,16 @@ export const ecosystemsData = [
     name: "GitHub Repos",
     url: "https://github.nekowawolf.xyz",
     description: "Open-source repositories, developer projects, and coding resources."
+  },
+  {
+    name: "Net",
+    url: "https://net.nekowawolf.xyz",
+    description: "A curated directory of universal websites, digital utilities, assets, and internet hidden gems."
+  },
+  {
+    name: "Creators",
+    url: "https://creators.nekowawolf.xyz",
+    description: "A curated directory of content creators, tech educators, and resources for digital self-learning."
   }
 ];
 
