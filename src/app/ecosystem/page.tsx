@@ -48,6 +48,11 @@ export const ecosystemsData = [
     name: "Creators",
     url: "https://creators.nekowawolf.xyz",
     description: "A curated directory of content creators, tech educators, and resources for digital self-learning."
+  },
+  {
+    name: "Guild",
+    url: "https://github.nekowawolf.xyz/",
+    description: "A curated directory of active communities across categories like Programming, Design, and Gaming."
   }
 ];
 
