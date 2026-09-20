@@ -51,7 +51,7 @@ export const ecosystemsData = [
   },
   {
     name: "Guild",
-    url: "https://github.nekowawolf.xyz/",
+    url: "https://guild.nekowawolf.xyz/",
     description: "A curated directory of active communities across categories like Programming, Design, and Gaming."
   }
 ];
