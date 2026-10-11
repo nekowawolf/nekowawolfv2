@@ -51,7 +51,7 @@ export default function Home() {
                 </p>
               </div>
 
-              <div className="w-full max-w-[640px] h-10 card-color border border-color rounded-md p-2 sm:p-3 text-[11px] sm:text-[12px] text-fill-color flex items-center overflow-hidden">
+              <div className="w-full max-w-[640px] h-10 translate-y-[2px] sm:-translate-y-[0.4px] card-color border border-color rounded-md p-2 sm:p-3 text-[11px] sm:text-[12px] text-fill-color flex items-center overflow-hidden">
                 <CryptoPriceTicker />
               </div>
             </div>
