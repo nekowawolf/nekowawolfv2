@@ -17,42 +17,42 @@ export const ecosystemsData = [
   {
     name: "Airdrop",
     url: "https://airdrop.nekowawolf.xyz",
-    description: "Curated list of verified crypto airdrops, bounties, and earning opportunities."
+    description: "Explore airdrop projects with information on funding, tokenomics, vesting, and claim status."
   },
   {
     name: "Crypto Community",
     url: "https://cc.nekowawolf.xyz",
-    description: "A comprehensive directory of active crypto communities, forums, and groups."
+    description: "Find crypto communities focused on trading, airdrops, NFTs, development, and more."
   },
   {
     name: "Web3 Tools",
     url: "https://web3.nekowawolf.xyz",
-    description: "Essential Web3 utilities including wallets, DEXs, CEXs, trackers, and trading bots."
+    description: "Discover Web3 tools for trading, DeFi, analytics, wallets, bridges, and security."
   },
   {
     name: "AI Tools",
     url: "https://ai.nekowawolf.xyz",
-    description: "A hand-picked collection of powerful Artificial Intelligence tools and resources."
+    description: "Browse AI tools for image and video creation, coding, research, design, and more."
   },
   {
     name: "GitHub Repos",
     url: "https://github.nekowawolf.xyz",
-    description: "Open-source repositories, developer projects, and coding resources."
+    description: "Explore GitHub repositories covering development, automation, AI, infrastructure, and other fields."
   },
   {
     name: "Net",
     url: "https://net.nekowawolf.xyz",
-    description: "A curated directory of universal websites, digital utilities, assets, and internet hidden gems."
+    description: "Find useful websites and digital resources for design, learning, media, and everyday tasks."
   },
   {
     name: "Creators",
     url: "https://creators.nekowawolf.xyz",
-    description: "A curated directory of content creators, tech educators, and resources for digital self-learning."
+    description: "Discover content creators across technology, AI, Web3, design, and other specialties."
   },
   {
     name: "Guild",
     url: "https://guild.nekowawolf.xyz/",
-    description: "A curated directory of active communities across categories like Programming, Design, and Gaming."
+    description: "Find online communities for programming, design, gaming, creative work, and more."
   }
 ];
 
@@ -142,9 +142,9 @@ export default function EcosystemPage() {
 
           {/* Description */}
           <p className="text-fill-color opacity-75 text-sm sm:text-base max-w-2xl leading-relaxed mt-4 font-medium">
-            Welcome to the Nww Ecosystem. Below is a curated directory of platforms,
-            tools, and resources designed to help you navigate, discover, and build in
-            the ever-evolving digital landscape.
+            Welcome to the Nww Ecosystem. Here you&apos;ll find platforms, tools,
+            resources, creators, and communities designed to help you navigate,
+            discover, and build in the ever-evolving digital landscape.
           </p>
         </div>
 

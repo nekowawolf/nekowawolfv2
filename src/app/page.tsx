@@ -132,14 +132,14 @@ export default function Home() {
             <StatsCard 
               title="AI Tools" 
               link="https://ai.nekowawolf.xyz/" 
-              description="Curated list of powerful Artificial Intelligence tools and resources, sourced from verified channels and sources."
+              description="Browse AI tools for image and video creation, coding, research, design, and more."
               count={stats.aiToolsCount}
             />
 
             <StatsCard 
               title="GitHub Repos" 
               link="https://github.nekowawolf.xyz/" 
-              description="Curated list of top open-source repositories and developer projects, sourced from trusted platforms and creators."
+              description="Explore GitHub repositories covering development, automation, AI, infrastructure, and other fields."
               count={stats.githubRepoCount}
             />
           </div>
