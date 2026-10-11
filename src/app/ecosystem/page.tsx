@@ -175,7 +175,7 @@ export default function EcosystemPage() {
                   
                   {/* Subtle link text */}
                   <div className="mt-3 overflow-hidden">
-                    <span className="text-xs text-blue-500 font-mono opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 block">
+                    <span className="text-xs text-blue-500 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 block">
                       {item.url} →
                     </span>
                   </div>
@@ -186,7 +186,7 @@ export default function EcosystemPage() {
         </div>
 
         {/* Terminal Section */}
-        <div className="w-full max-w-4xl mt-16 sm:mt-24 text-fill-color border border-divider rounded-xl p-5 sm:p-6 font-mono text-sm sm:text-base shadow-2xl relative overflow-hidden group">
+        <div className="w-full max-w-4xl mt-16 sm:mt-24 text-fill-color border border-divider rounded-xl p-5 sm:p-6 text-sm sm:text-base shadow-2xl relative overflow-hidden group">
           {/* Terminal Window Controls */}
           <div className="flex gap-2 mb-6">
             <div className="w-3 h-3 rounded-full bg-red-500"></div>
