@@ -1,0 +1,141 @@
+'use client';
+
+import { useEffect, useState } from 'react';
+import Link from 'next/link';
+import SocialLinks from '@/components/SocialLinks';
+import GasTracker from '@/components/GasTracker';
+import FearAndGreed from '@/components/FearAndGreed';
+import CryptoPriceTicker from '@/components/CryptoPriceTicker';
+import GithubStats from '@/components/GithubStats';
+import StatsCard from '@/components/StatsCard';
+import { fetchStats } from '@/utils/fetchStats';
+import { ecosystemsData } from '@/constants/ecosystems';
+
+export default function Home() {
+  const [stats, setStats] = useState({ githubRepoCount: '--', aiToolsCount: '--' });
+  const [gasTimer, setGasTimer] = useState('Gwei updates in: --');
+
+  useEffect(() => {
+    const loadStats = async () => {
+      const { githubRepoCount, aiToolsCount } = await fetchStats();
+      setStats({ githubRepoCount, aiToolsCount });
+    };
+    loadStats();
+  }, []);
+
+  return (
+    <main className="body-color p-4 sm:p-6 min-h-screen flex items-center justify-center">
+      <div className="max-w-[1200px] w-full flex flex-col gap-4 sm:gap-6 my-auto">
+        <div className="flex flex-col md:flex-row gap-4 sm:gap-6">
+          <div className="flex flex-col sm:flex-row gap-4 md:w-[600px]">
+            <SocialLinks />
+            
+            <div className="flex flex-col gap-3 sm:gap-4 flex-1">
+              <div className="w-full sm:min-w-[500px] card-color border border-color rounded-md p-3 sm:p-4 text-fill-color text-xs sm:text-[13px] leading-tight h-full">
+                
+                <h3 className="font-semibold mb-2 mt-0 sm:mt-3 text-sm md:text-base relative inline-block">
+                  About Me
+                  <span className="block w-16 h-[3px] bg-blue-500 mt-1 rounded"></span>
+                </h3>
+
+                <p className="opacity-90 text-xs md:text-sm leading-relaxed">
+                  Fullstack Developer and Graphic Designer focused on modern interactive web experiences and mobile apps, with interests in UI/UX, Web3, crypto, and game development.{" "}
+                  <a
+                    href="https://portfolio.nekowawolf.xyz/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-500 hover:underline font-medium"
+                  >
+                    Learn more
+                  </a>
+                </p>
+              </div>
+
+              <div className="w-full max-w-[640px] h-10 translate-y-[2px] sm:-translate-y-[0.4px] card-color border border-color rounded-md p-2 sm:p-3 text-[11px] sm:text-[12px] text-fill-color flex items-center overflow-hidden">
+                <CryptoPriceTicker />
+              </div>
+            </div>
+          </div>
+
+          <div className="rounded-md card-color w-full md:w-[600px] h-[140px] sm:h-[180px] md:h-[215px] border border-color overflow-hidden">
+            <GithubStats username="nekowawolf" />
+          </div>
+        </div>
+
+        <div className="flex flex-col md:flex-row gap-4 sm:gap-6">
+          <div className="w-full card-color md:w-[250px] h-[180px] sm:h-[215px] md:h-auto rounded-md border border-color overflow-hidden">
+            <img
+              src="/img/neko.png"
+              alt="nekowawolf profile illustration"
+              className="w-[200px] sm:w-[230px] md:w-full h-full object-cover mx-auto md:mx-0"
+            />
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 flex-1">
+            <div className="card-color border border-color rounded-md p-3 sm:p-4 text-fill-color">
+              <div className="flex justify-between items-center mb-3">
+                <span className="text-xs sm:text-sm font-medium text-blue-500">
+                  Information
+                </span>
+                <span className="text-[10px] text-fill-color/50">Live Updates</span>
+              </div>
+
+              <GasTracker onTimerUpdate={setGasTimer} />
+              <FearAndGreed />
+              
+              <div className="text-[10px] text-fill-color/60 flex justify-between">
+                <span>{gasTimer}</span>
+                <span>
+                  Price updates in:
+                  <span className="text-blue-500"> 5 min</span>
+                </span>
+              </div>
+            </div>
+
+            <div className="card-color border border-color rounded-md text-fill-color relative overflow-hidden flex items-center justify-center min-h-48 group">
+              <div aria-hidden="true" className="ecosystem-background absolute inset-0" />
+              
+              {/* Active Badge */}
+              <div className="absolute top-3 sm:top-4 right-3 sm:right-4 z-20">
+                <span className="inline-block text-[10px] bg-blue-500/10 text-blue-400 border border-blue-500/20 px-2 py-0.5 rounded-full backdrop-blur-md">
+                  Active
+                </span>
+              </div>
+
+              <div className="absolute bottom-2.5 sm:bottom-3 left-3 sm:left-4 z-20">
+                <span className="text-[11px] text-fill-color/60 font-medium">
+                  {ecosystemsData.length} ecosystems
+                </span>
+              </div>
+
+              <Link href="/ecosystem" className="cursor-pointer absolute flex flex-col items-center mr-6 sm:mr-7 z-10 transition-transform hover:scale-105">
+                <img
+                  src="https://cdn.nekowawolf.xyz/image/2026/1787424833_1781829491_folder.webp"
+                  alt=""
+                  className="w-14 sm:w-18 h-14 sm:h-18 cursor-pointer drop-shadow-lg"
+                />
+                <p className="-mt-2 text-fill-color text-[10px] sm:text-sm font-semibold drop-shadow-md whitespace-nowrap">
+                  Nww Ecosystem
+                </p>
+              </Link>
+            </div>
+
+            <StatsCard 
+              title="AI Tools" 
+              link="https://ai.nekowawolf.xyz/" 
+              description="Browse AI tools for image and video creation, coding, research, design, and more."
+              count={stats.aiToolsCount}
+            />
+
+            <StatsCard 
+              title="GitHub Repos" 
+              link="https://github.nekowawolf.xyz/" 
+              description="Explore GitHub repositories covering development, automation, AI, infrastructure, and other fields."
+              count={stats.githubRepoCount}
+            />
+          </div>
+        </div>
+      </div>
+    </main>
+  );
+}

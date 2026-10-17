@@ -59,6 +59,14 @@ body {
   display: none;
 }
 
+.ecosystem-background {
+  background: url('https://cdn.nekowawolf.xyz/image/2026/1787424827_1781829282_godhand.webp') center / cover no-repeat;
+}
+
+.darkmode .ecosystem-background {
+  background-image: url('https://cdn.nekowawolf.xyz/image/2026/1787424839_1781831285_godhand_white.webp');
+}
+
 .darkmode .theme-icon-sun {
   display: none;
 }

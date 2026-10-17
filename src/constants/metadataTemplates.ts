@@ -1,21 +1,24 @@
 import { Metadata } from 'next';
+import { OG_IMAGE, SITE_URL } from './seo';
 
-export const nekowawolfMetadata = (title: string, description: string, withImage: boolean = true): Metadata => {
+export const nekowawolfMetadata = (title: string, description: string, path: string, withImage: boolean = true): Metadata => {
   const pageTitle = title === "Home" ? "nekowawolf - Fullstack Developer" : `nekowawolf | ${title}`;
   
   return {
     title: pageTitle,
     description,
+    alternates: { canonical: `${SITE_URL}${path}` },
     openGraph: {
+      url: `${SITE_URL}${path}`,
       title: pageTitle,
       description,
       siteName: 'nekowawolf',
       ...(withImage && {
         images: [
           {
-            url: '/img/OG.webp',
-            width: 1200,
-            height: 630,
+            url: OG_IMAGE,
+            width: 3600,
+            height: 1890,
             alt: pageTitle,
           },
         ],
@@ -28,7 +31,7 @@ export const nekowawolfMetadata = (title: string, description: string, withImage
       title: pageTitle,
       description,
       ...(withImage && {
-        images: ['/img/OG.webp'],
+        images: [OG_IMAGE],
       }),
     },
   };
